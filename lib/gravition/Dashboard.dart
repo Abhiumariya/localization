@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/gravition/Clients.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key, required String title});
@@ -157,79 +158,196 @@ class _DashboardState extends State<Dashboard> {
                     value: '/Charges', child: const Text('Charges').tr()),
               ];
             },
-          )
+          ),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Clients()),
+                );
+              },
+              icon: const Icon(Icons.arrow_forward))
         ],
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'SEARCH',
-                  style: TextStyle(fontSize: 22),
-                ).tr(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const Text('all').tr(),
-                    const Icon(Icons.arrow_drop_down),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Card(
-                shadowColor: Colors.white,
-                elevation: 5,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 6),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        prefixIcon: const Icon(Icons.search),
-                        hintText: 'Name'.tr()),
-                  ),
-                )),
-            const SizedBox(
-              height: 25,
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 12),
-              height: MediaQuery.of(context).size.height * 0.050,
-              width: MediaQuery.of(context).size.width * 0.95,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15), color: Colors.green),
-              child: Center(
-                child: const Text(
-                  "search",
-                  style: TextStyle(color: Colors.white, fontSize: 19),
-                ).tr(),
+        child: Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'SEARCH',
+                style: TextStyle(fontSize: 22),
+              ).tr(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Text('all').tr(),
+                  const Icon(Icons.arrow_drop_down),
+                ],
               ),
-            ),
-            const SizedBox(
-              height: 11,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Checkbox(
-                  value: oncheck,
-                  onChanged: (value) {
-                    setState(() {
-                      oncheck = value;
-                    });
-                  },
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Card(
+              shadowColor: Colors.white,
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      prefixIcon: const Icon(Icons.search),
+                      hintText: 'Name'.tr()),
                 ),
-                const Text('Exact').tr()
-              ],
-            )
-          ],
-        ),
+              )),
+          const SizedBox(
+            height: 25,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 12),
+            height: MediaQuery.of(context).size.height * 0.050,
+            width: MediaQuery.of(context).size.width * 0.95,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15), color: Colors.green),
+            child: Center(
+              child: const Text(
+                "search",
+                style: TextStyle(color: Colors.white, fontSize: 19),
+              ).tr(),
+            ),
+          ),
+          const SizedBox(
+            height: 11,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Checkbox(
+                value: oncheck,
+                onChanged: (value) {
+                  setState(() {
+                    oncheck = value;
+                  });
+                },
+              ),
+              const Text('Exact').tr()
+            ],
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text("data"),
+                      SizedBox(
+                        height: 30,
+                        width: 250, // <-- SEE HERE
+                        child: TextField(
+                          textAlign: TextAlign.left,
+                          decoration:
+                              InputDecoration(border: OutlineInputBorder()),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text("data"),
+                      // SizedBox(
+                      //   width: 30,
+                      // ),
+                      SizedBox(
+                        height: 30,
+                        width: 250, // <-- SEE HERE
+                        child: TextField(
+                          textAlign: TextAlign.left,
+                          decoration:
+                              InputDecoration(border: OutlineInputBorder()),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text("data"),
+                      // SizedBox(
+                      //   width: 30,
+                      // ),
+                      SizedBox(
+                        height: 30,
+                        width: 250, // <-- SEE HERE
+                        child: TextField(
+                          textAlign: TextAlign.left,
+                          decoration:
+                              InputDecoration(border: OutlineInputBorder()),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text("data"),
+                      // SizedBox(
+                      //   width: 30,
+                      // ),
+                      SizedBox(
+                        height: 30,
+                        width: 250, // <-- SEE HERE
+                        child: TextField(
+                          textAlign: TextAlign.left,
+                          decoration:
+                              InputDecoration(border: OutlineInputBorder()),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const [
+                        Text("data"),
+                        // SizedBox(
+                        //   width: 30,
+                        // ),
+                        SizedBox(
+                            height: 30,
+                            width: 250, // <-- SEE HERE
+                            child: TextField(
+                              textAlign: TextAlign.left,
+                              decoration:
+                                  InputDecoration(border: OutlineInputBorder()),
+                            ))
+                      ])
+                ]);
+              });
+            },
+            child: Container(
+              height: 30,
+              width: 50,
+              decoration: const BoxDecoration(color: Colors.yellow),
+              child: const Icon(Icons.add),
+            ),
+          ),
+        ]),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,

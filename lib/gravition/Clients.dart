@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/gravition/CollectionSheet.dart';
 
 class Clients extends StatefulWidget {
   const Clients({super.key});
@@ -20,15 +21,27 @@ class _ClientsState extends State<Clients> {
         title: const Text('Clients').tr(),
         actions: [
           IconButton(
-              onPressed: () async {
-                if (context.locale == const Locale('en', 'US')) {
-                  context.setLocale(const Locale('en'));
-                } else {
-                  context.setLocale(const Locale('en', 'US'));
-                }
-                setState(() {});
+            onPressed: () async {
+              if (context.locale == const Locale('en', 'US')) {
+                context.setLocale(const Locale('en'));
+              } else {
+                context.setLocale(const Locale('en', 'US'));
+              }
+              setState(() {});
+            },
+            icon: const Icon(Icons.bookmarks_outlined),
+          ),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CollectionSheet(
+                            title: '',
+                          )),
+                );
               },
-              icon: const Icon(Icons.bookmarks_outlined))
+              icon: const Icon(Icons.arrow_forward))
         ],
       ),
       body: Container(

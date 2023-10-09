@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/gravition/Dashboard.dart';
+import 'package:flutter_application_3/gravition/CollectionSheet.dart';
 //import 'package:flutter_application_1/firebase_opt.dart';
 
 Future<void> main() async {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const Dashboard(
+      home: const CollectionSheet(
         title: '',
       ),
     );
