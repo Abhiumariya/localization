@@ -64,14 +64,16 @@ class _CheckerInboxState extends State<CheckerInbox> {
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Container(
-                                height: 56,
-                                width: 5,
-                                decoration:
-                                    const BoxDecoration(color: Colors.yellow),
+                              Expanded(
+                                child: Container(
+                                  height: 56,
+                                  width: 5,
+                                  decoration:
+                                      const BoxDecoration(color: Colors.yellow),
+                                ),
                               ),
                               const SizedBox(
-                                width: 10,
+                                width: 5,
                               ),
                               Container(
                                 padding: const EdgeInsets.all(3),
