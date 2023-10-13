@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/crop_image.dart';
+import 'package:flutter_application_3/gravition/Search_bottomsheet.dart';
 
 // import 'package:flutter_application_1/firebase_opt.dart';\
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const Crop_image(
+      home: const SearchBottomSheet(
           // title: '',
           ),
     );

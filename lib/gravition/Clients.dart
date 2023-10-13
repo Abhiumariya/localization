@@ -79,7 +79,7 @@ class _ClientsState extends State<Clients> {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    const Text('Ajay').tr(),
+                                    const Text('Ajay Saini').tr(),
                                     const SizedBox(),
                                     const Text('0000')
                                   ],
@@ -122,13 +122,13 @@ class _ClientsState extends State<Clients> {
                 Icons.bookmarks,
                 color: Colors.green,
               ),
-              label: 'book'.tr()),
+              label: 'bookmark'.tr()),
           BottomNavigationBarItem(
               icon: const Icon(
                 Icons.person_2,
                 color: Colors.green,
               ),
-              label: 'per'.tr())
+              label: 'Person2'.tr())
         ],
       ),
     );

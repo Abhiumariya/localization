@@ -145,13 +145,14 @@ class _DashboardState extends State<Dashboard> {
             onSelected: (value) {},
             itemBuilder: (context) {
               return [
-                PopupMenuItem(value: '/Info', child: const Text('Info').tr()),
+                PopupMenuItem(
+                    value: '/Info', child: const Text('More Loan Info').tr()),
                 PopupMenuItem(
                     value: '/Transaction',
                     child: const Text('Transaction').tr()),
                 PopupMenuItem(
                     value: '/Loan Repayment Schedule',
-                    child: const Text('Schedule').tr()),
+                    child: const Text('Loan Repayment Schedule').tr()),
                 PopupMenuItem(
                     value: '/Document', child: const Text('Document').tr()),
                 PopupMenuItem(
@@ -176,7 +177,7 @@ class _DashboardState extends State<Dashboard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'SEARCH',
+                'Search',
                 style: TextStyle(fontSize: 22),
               ).tr(),
               Row(
@@ -214,7 +215,7 @@ class _DashboardState extends State<Dashboard> {
                 borderRadius: BorderRadius.circular(15), color: Colors.green),
             child: Center(
               child: const Text(
-                "search",
+                "SEARCH",
                 style: TextStyle(color: Colors.white, fontSize: 19),
               ).tr(),
             ),
@@ -233,7 +234,7 @@ class _DashboardState extends State<Dashboard> {
                   });
                 },
               ),
-              const Text('Exact').tr()
+              const Text('Exact Match').tr()
             ],
           ),
         ]),
@@ -267,13 +268,13 @@ class _DashboardState extends State<Dashboard> {
                 Icons.bookmarks,
                 color: Colors.green,
               ),
-              label: 'book'.tr()),
+              label: 'bookmark'.tr()),
           BottomNavigationBarItem(
               icon: const Icon(
                 Icons.person_2,
                 color: Colors.green,
               ),
-              label: 'per'.tr())
+              label: 'Person2'.tr())
         ],
       ),
     );

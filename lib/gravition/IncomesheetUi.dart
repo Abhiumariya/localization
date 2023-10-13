@@ -11,10 +11,6 @@ class IncomesheetUi extends StatefulWidget {
 class _IncomesheetUiState extends State<IncomesheetUi> {
   @override
   Widget build(BuildContext context) {
-    // height:
-    // MediaQuery.of(context).size.height;
-    // width:
-    // MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -265,48 +261,3 @@ class _IncomesheetUiState extends State<IncomesheetUi> {
     );
   }
 }
-
-//  children: [
-//                         Container(
-//                           height: MediaQuery.of(context).size.height * 0.09,
-//                           width: MediaQuery.of(context).size.width * 0.99,
-//                           decoration:
-//                               BoxDecoration(color: Colors.grey.shade200),
-//                           child: Column(
-//                             children: [
-//                               Row(
-//                                 children: const [
-//                                   Text(
-//                                     "Login",
-//                                   ),
-//                                 ],
-//                               ),
-//                               Row(
-//                                 mainAxisAlignment: MainAxisAlignment.end,
-//                                 children: const [
-//                                   Icon(
-//                                     Icons.check,
-//                                     color: Colors.green,
-//                                   ),
-//                                   SizedBox(
-//                                     width: 10,
-//                                   ),
-//                                   Icon(
-//                                     Icons.dangerous_outlined,
-//                                     color: Colors.yellow,
-//                                   ),
-//                                   SizedBox(
-//                                     width: 10,
-//                                   ),
-//                                   Icon(
-//                                     Icons.delete,
-//                                     color: Colors.red,
-//                                   )
-//                                 ],
-//                               ),
-//                               const Text("23 Apr 2023")
-//                             ],
-//                           ),
-//                         )
-//                       ],
-

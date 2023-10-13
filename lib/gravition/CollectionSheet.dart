@@ -33,7 +33,7 @@ class _CollectionSheetState extends State<CollectionSheet> {
               elevation: 0,
               backgroundColor: Colors.green,
               leading: const Icon(Icons.menu),
-              title: const Text("Sheet").tr(),
+              title: const Text("Individual Collection Sheet").tr(),
               bottom: TabBar(tabs: myTabs),
               actions: [
                 IconButton(
@@ -68,7 +68,7 @@ class _CollectionSheetState extends State<CollectionSheet> {
                       child: Row(
                         children: [
                           const Text(
-                            "Generate",
+                            "Generate New",
                             style: TextStyle(fontSize: 20),
                           ).tr(),
                         ],
@@ -90,7 +90,7 @@ class _CollectionSheetState extends State<CollectionSheet> {
                       child: DropdownButtonFormField(
                         borderRadius: BorderRadius.circular(10),
                         decoration: InputDecoration(
-                            labelText: 'Office'.tr(),
+                            labelText: 'Select Office'.tr(),
                             border: const OutlineInputBorder()),
                         onChanged: (onchanged) {
                           setState(() {

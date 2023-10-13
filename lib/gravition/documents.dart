@@ -47,7 +47,7 @@ class _DocumentsState extends State<Documents> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: const Text(
-                          'FOUNDATION',
+                          '3F OECONOMICS FOUNDATION',
                           textAlign: TextAlign.right,
                           style: TextStyle(fontSize: 22, color: Colors.white),
                           maxLines: 2,
@@ -66,7 +66,7 @@ class _DocumentsState extends State<Documents> {
                   const SizedBox(
                     width: 22,
                   ),
-                  const Text('Check').tr()
+                  const Text('Checker Inbox').tr()
                 ],
               ),
               onTap: () {},
@@ -78,7 +78,7 @@ class _DocumentsState extends State<Documents> {
                   const SizedBox(
                     width: 22,
                   ),
-                  const Text('Collection').tr()
+                  const Text('Gndividual Collection sheet').tr()
                 ],
               ),
               onTap: () {},
@@ -115,7 +115,7 @@ class _DocumentsState extends State<Documents> {
                   const SizedBox(
                     width: 22,
                   ),
-                  const Text('Offline').tr()
+                  const Text('Offline Sync*').tr()
                 ],
               ),
               onTap: () {},
@@ -142,14 +142,16 @@ class _DocumentsState extends State<Documents> {
             onSelected: (value) {},
             itemBuilder: (context) {
               return [
-                PopupMenuItem(value: '/hello', child: const Text('More').tr()),
+                PopupMenuItem(
+                    value: '/hello',
+                    child: const Text('More client info').tr()),
                 PopupMenuItem(
                     value: '/Charges', child: const Text('Charges').tr()),
                 PopupMenuItem(
                     value: '/Document', child: const Text('Document').tr()),
                 PopupMenuItem(
                     value: '/Upload Signature',
-                    child: const Text('Upload').tr()),
+                    child: const Text('Upload Signature').tr()),
                 PopupMenuItem(
                     value: '/Indentifiers',
                     child: const Text('Indentifiers').tr()),

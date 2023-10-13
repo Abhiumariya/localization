@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -28,8 +30,13 @@ class _Crop_imageState extends State<Crop_image> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green,
+        elevation: 0,
         leading: const Icon(Icons.menu),
         title: const Text("Crop_image"),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -75,7 +82,7 @@ class _Crop_imageState extends State<Crop_image> {
       uiSettings: [
         AndroidUiSettings(
             toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
+            toolbarColor: Colors.greenAccent,
             toolbarWidgetColor: Colors.white,
             initAspectRatio: CropAspectRatioPreset.original,
             hideBottomControls: true,
