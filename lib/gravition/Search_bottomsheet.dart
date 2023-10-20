@@ -52,8 +52,12 @@ class _SearchBottomSheetState extends State<SearchBottomSheet> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return Padding(
-                                    padding: const EdgeInsets.only(bottom: 5),
+                                    padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom),
                                     child: Column(
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
@@ -68,137 +72,149 @@ class _SearchBottomSheetState extends State<SearchBottomSheet> {
                                                 padding:
                                                     const EdgeInsets.all(8.0),
                                                 child: SizedBox(
-                                                    height: height * 0.06,
+                                                    height: height * 0.09,
                                                     width: width * 0.42,
-                                                    child: TextField(
-                                                      autofocus: true,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                      keyboardType:
-                                                          TextInputType.none,
-                                                      controller: dateinput,
-                                                      decoration: InputDecoration(
-                                                          border: OutlineInputBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          10)),
-                                                          suffixIcon:
-                                                              const Icon(Icons
-                                                                  .calendar_month)),
-                                                      onTap: () async {
-                                                        DateTime? pickedDate =
-                                                            await showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (context) {
-                                                                  return LayoutBuilder(
-                                                                      builder: (_,
-                                                                          constraints) {
-                                                                    return Center(
-                                                                      child: Material(
-                                                                          child: CalendarDatePicker(
-                                                                        initialDate:
-                                                                            DateTime.now(),
-                                                                        firstDate:
-                                                                            DateTime(2000),
-                                                                        lastDate:
-                                                                            DateTime(2400),
-                                                                        onDateChanged:
-                                                                            (value) {
-                                                                          Navigator.of(context)
-                                                                              .pop(value);
-                                                                        },
-                                                                      )),
-                                                                    );
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: TextField(
+                                                        autofocus: true,
+                                                        style: const TextStyle(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        keyboardType:
+                                                            TextInputType.none,
+                                                        controller: dateinput,
+                                                        decoration: InputDecoration(
+                                                            border: OutlineInputBorder(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10)),
+                                                            suffixIcon:
+                                                                const Icon(Icons
+                                                                    .calendar_month)),
+                                                        onTap: () async {
+                                                          DateTime? pickedDate =
+                                                              await showDialog(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return LayoutBuilder(
+                                                                        builder:
+                                                                            (_, constraints) {
+                                                                      return Center(
+                                                                        child: Material(
+                                                                            child: CalendarDatePicker(
+                                                                          initialDate:
+                                                                              DateTime.now(),
+                                                                          firstDate:
+                                                                              DateTime(2000),
+                                                                          lastDate:
+                                                                              DateTime(2400),
+                                                                          onDateChanged:
+                                                                              (value) {
+                                                                            Navigator.of(context).pop(value);
+                                                                          },
+                                                                        )),
+                                                                      );
+                                                                    });
                                                                   });
-                                                                });
 
-                                                        if (pickedDate !=
-                                                            null) {
-                                                          String formattedDate =
-                                                              DateFormat(
-                                                                      'dd-MM-yyyy')
-                                                                  .format(
-                                                                      pickedDate);
+                                                          if (pickedDate !=
+                                                              null) {
+                                                            String
+                                                                formattedDate =
+                                                                DateFormat(
+                                                                        'dd-MM-yyyy')
+                                                                    .format(
+                                                                        pickedDate);
 
-                                                          setState(() {
-                                                            dateinput.text =
-                                                                formattedDate;
-                                                          });
-                                                        } else {}
-                                                      },
+                                                            setState(() {
+                                                              dateinput.text =
+                                                                  formattedDate;
+                                                            });
+                                                          } else {}
+                                                        },
+                                                      ),
                                                     )),
                                               ),
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
                                                 child: SizedBox(
-                                                    height: height * 0.06,
+                                                    height: height * 0.09,
                                                     width: width * 0.42,
-                                                    child: TextField(
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                      keyboardType:
-                                                          TextInputType.none,
-                                                      controller: inputdate,
-                                                      decoration: InputDecoration(
-                                                          border: OutlineInputBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          10)),
-                                                          suffixIcon:
-                                                              const Icon(Icons
-                                                                  .calendar_month)),
-                                                      onTap: () async {
-                                                        DateTime? pickedDate =
-                                                            await showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (context) {
-                                                                  return LayoutBuilder(
-                                                                      builder: (_,
-                                                                          constraints) {
-                                                                    return Center(
-                                                                      child: Material(
-                                                                          child: CalendarDatePicker(
-                                                                        initialDate:
-                                                                            DateTime.now(),
-                                                                        firstDate:
-                                                                            DateTime(2000),
-                                                                        lastDate:
-                                                                            DateTime(2025),
-                                                                        onDateChanged:
-                                                                            (value) {
-                                                                          Navigator.of(context)
-                                                                              .pop(value);
-                                                                        },
-                                                                      )),
-                                                                    );
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: TextField(
+                                                        style: const TextStyle(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        keyboardType:
+                                                            TextInputType.none,
+                                                        controller: inputdate,
+                                                        decoration: InputDecoration(
+                                                            border: OutlineInputBorder(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10)),
+                                                            suffixIcon:
+                                                                const Icon(Icons
+                                                                    .calendar_month)),
+                                                        onTap: () async {
+                                                          DateTime? pickedDate =
+                                                              await showDialog(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return LayoutBuilder(
+                                                                        builder:
+                                                                            (_, constraints) {
+                                                                      return Center(
+                                                                        child: Material(
+                                                                            child: CalendarDatePicker(
+                                                                          initialDate:
+                                                                              DateTime.now(),
+                                                                          firstDate:
+                                                                              DateTime(2000),
+                                                                          lastDate:
+                                                                              DateTime(2025),
+                                                                          onDateChanged:
+                                                                              (value) {
+                                                                            Navigator.of(context).pop(value);
+                                                                          },
+                                                                        )),
+                                                                      );
+                                                                    });
                                                                   });
-                                                                });
 
-                                                        if (pickedDate !=
-                                                            null) {
-                                                          String dateformatted =
-                                                              DateFormat(
-                                                                      'dd-MM-yyyy')
-                                                                  .format(
-                                                                      pickedDate);
+                                                          if (pickedDate !=
+                                                              null) {
+                                                            String
+                                                                dateformatted =
+                                                                DateFormat(
+                                                                        'dd-MM-yyyy')
+                                                                    .format(
+                                                                        pickedDate);
 
-                                                          setState(() {
-                                                            inputdate.text =
-                                                                dateformatted;
-                                                          });
-                                                        } else {}
-                                                      },
+                                                            setState(() {
+                                                              inputdate.text =
+                                                                  dateformatted;
+                                                            });
+                                                          } else {}
+                                                        },
+                                                      ),
                                                     )),
                                               ),
                                             ],

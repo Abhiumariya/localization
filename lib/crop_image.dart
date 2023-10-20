@@ -35,31 +35,56 @@ class _Crop_imageState extends State<Crop_image> {
         leading: const Icon(Icons.menu),
         title: const Text("Crop_image"),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
+          IconButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const MyHomePage()),
+                // );
+              },
+              icon: const Icon(Icons.arrow_forward))
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          if (state == Appstate.free) {
-            _pickedImage();
-          } else if (state == Appstate.cropped) {
-            _clearimage();
-          }
-        },
-        child: buildButtonIcon(),
-      ),
-      body: Center(
-        child: imageFile != null ? Image.file(imageFile!) : const SizedBox(),
+
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     if (state == Appstate.free) {
+      //       _pickedImage();
+      //     } else if (state == Appstate.cropped) {
+      //       _clearimage();
+      //     }
+      //   },
+      //   child: buildButtonIcon(),
+      // ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child:
+                imageFile != null ? Image.file(imageFile!) : const SizedBox(),
+          ),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  if (state == Appstate.free) {
+                    _pickedImage();
+                  } else if (state == Appstate.cropped) {
+                    _clearimage();
+                  }
+                },
+                child: buildButtonIcon()),
+          ),
+        ],
       ),
     );
   }
 
   buildButtonIcon() {
     if (state == Appstate.free) {
-      return const Icon(Icons.add);
+      return const Text("get image");
     } else if (state == Appstate.picked) {
     } else if (state == Appstate.cropped) {
-      return const Icon(Icons.clear);
+      return const Text("clean");
     } else {
       return const SizedBox();
     }
@@ -76,6 +101,7 @@ class _Crop_imageState extends State<Crop_image> {
     }
   }
 
+  // ignore: non_constant_identifier_names
   Future crop_Image() async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: imageFile!.path,

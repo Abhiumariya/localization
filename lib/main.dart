@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/gravition/Search_bottomsheet.dart';
+import 'package:flutter_application_3/shimmer.dart/Asset_Details.dart';
 
 // import 'package:flutter_application_1/firebase_opt.dart';\
 
@@ -30,9 +30,49 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const SearchBottomSheet(
+      home: const AssetDetails(
           // title: '',
           ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+// void main() {
+  
+  
+  
+  
+//   for (int  i = 1; i < 6; i++) {
+    
+    
+      
+      
+    
+    
+//       print("****");
+      
+    
+    
+    
+
+
+
+
+//   }
+        
+// }
+  
+//    var k =["*","**","***","****","*****"];
+//   for(int n=0; n<k.length;n++){
+//     print(k[n]);
+//   }
+
+// }
